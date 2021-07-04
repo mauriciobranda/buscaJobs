@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Empregos em Caxias do Sul</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    
+    <table>
+
+            <form class="teamSelection" method="POST" action="/">  
+                {% if myvariable == None %}
+                <p style="text-align: center">Selecione uma empresa</p>
+                {% else %}
+                <h2 style="text-align: center">Empresa Selecionada:  {{ myvariable }}</h2>
+                {% endif %}
+                <select class="teamForm" id="teamDropdownSelector" type="text" name="teamDropdown" placeholder="Selecone a Empresa">
+                    <option disabled selected>Empresa</option>
+                     {% for empresa in empresa %}
+                    <option value= "{{empresa}}">{{ empresa }}</option>"
+                    {% endfor %}
+                </select>
+                <input class="btn" type="submit" value="submit">
+             </form>
+
+        {% if myvariable == None %}
+
+        {% else %}
+        <tr>
+                <th>Vagas da Empresa {{ myvariable }}</th>
+        </tr>
+        {% endif %}
+
+        {% for task in tasks %}
+            <tr>
+                <td>
+                    <a href='{{ task.url }}'>{{ task.title }}</a>
+                    <br>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</div>
+{% endblock %}

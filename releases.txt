@@ -1,0 +1,43 @@
+guppy
+
+#Our Python Flask Application will be our Web Framework and we will render our html files using jinja templates.
+app.py
+
+#indexador no Elastic
+elastic.py
+
+#mainList
+extrator
+
+Lista de vagas aplicaveis a TI
+
+"Product Owner"
+"Analista de Negocios"
+"Analista de Suporte"
+"Desenvolvedor"
+"Analista de Sistemas"
+"Coordenador de TI"
+"Analista de Help Desk"
+"Tecnico em Informatica"
+"Tecnico de TI"
+"Quality Assurance Analyst"
+"Desenvolvedor Front-End"
+"Software"
+
+"Infraestrutura"
+"Seguranca da Informacao"
+
+"Cientista de Dados"
+
+"Agile"
+
+------
+Ordem de Execucao
+------
+Pre Req: ElasticSearch via prompt deve estar rodando
+
+Precisa atualizar os indices ?
+Sim, entao Primeiro deleta o indice via CURL
+Segundo carrega os indices pelo elastic.py
+Terceiro Executa o App.py para iniciar a aplicacao Flask
+Quarto acessa o localhost:5000

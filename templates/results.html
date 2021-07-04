@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      img {
+        width: 10%;
+        height: auto;
+      }
+      </style>
+    <title>Busca Jobs - Portal de Oportunidades</title>
+
+  </head>
+  <body>
+
+  <div class="container">
+    <div style="background:transparent !important" class="jumbotron">
+      <div style="font-family: 'Pacifico', cursive;">
+        <p>
+          <center>
+          <font size="8"><a href="http://localhost:5000/">Busca Jobs</a></font>
+          </center>
+        </p>
+      </div>
+    </div>
+
+  <form action="/search/results" method="post">
+    <div class="input-group">
+      <input type="text" class="form-control input-lg" name="input" placeholder="Search"  autofocus>
+
+      <div class="input-group-btn">
+        <button class="btn btn-primary btn-lg" type="submit">
+          <i class="glyphicon glyphicon-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+
+
+
+  <center>
+      <h5>Termo de pesquisa: <b>{{ search_term }}</b> <p hidden>Resultados encontrados: ({{ res['hits']['total'] }})</p> </h5>
+  </center>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Data Consulta</th>
+        <th>Fonte</th>
+        <th>Vaga</th>
+        <th>Empresa</th>
+        <th>Localizacao</th>
+      </tr>
+    </thead>
+
+{% for hit in res['hits']['hits'] %}
+    <tbody>
+      <tr>
+        <th scope="row">{{ hit['_source']['date'] }}</th>
+          <td>{{ hit['_index'] }}<img src="https://www.gupy.io/hubfs/logo-gupy-letter-blue.svg" ></td>
+          <td><a href="{{ hit['_source']['url'] }}">{{ hit['_source']['title'] }}</a></td>
+          <td>{{ hit['_source']['companyName'] }}</td>
+          <td>{{ hit['_source']['localizacao'] }}</td>
+      </tr>
+    </tbody>
+{% endfor %}
+  </table>
+
+        <footer class="footer">
+          <p>&copy; 2020 Mauricio Brandalise</p>
+        </footer>
+
+      </div>
+    </div>
+  </body>
+
+
+</html>
