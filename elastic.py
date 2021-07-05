@@ -1,7 +1,4 @@
 # CARGA de Vagas no ES
-# https://medium.com/naukri-engineering/elasticsearch-tutorial-for-beginners-using-python-b9cb48edcedc
-# 
-# 
 # from datetime import datetime
 import mainList, json, datetime
 from elasticsearch import Elasticsearch
