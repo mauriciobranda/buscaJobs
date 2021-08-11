@@ -17,6 +17,6 @@ Pre Req: ElasticSearch via prompt deve estar rodando
 
 Precisa atualizar os indices ?
 Sim, entao Primeiro deleta o indice via CURL
-Segundo carrega os indices pelo elastic.py
+Segundo carrega os indices pelo elastic.py (ou via postman)
 Terceiro Executa o App.py para iniciar a aplicacao Flask
 Quarto acessa o localhost:5000
