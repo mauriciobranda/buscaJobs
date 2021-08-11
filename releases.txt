@@ -1,4 +1,4 @@
-guppy
+gupy
 
 #Our Python Flask Application will be our Web Framework and we will render our html files using jinja templates.
 app.py
