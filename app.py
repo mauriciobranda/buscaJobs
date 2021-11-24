@@ -18,7 +18,6 @@ def search_request():
     search_term = request.form["input"]
     search_term_location = request.form["input-location"]
     print(search_term)
-    print("passou aqui")
 
     # Abaixo o que vai devolver para o results.html
     # Lembrar de trocar o meu INDEX
