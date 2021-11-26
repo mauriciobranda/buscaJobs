@@ -1,15 +1,8 @@
 #Webscrapping vagas Gupy
 
-import requests, json, copy
+import requests, json
 from bs4 import BeautifulSoup
-
-headers = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Max-Age': '3600',
-    'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'
-    }
+from utils import headers
 
 #extrator Gupy
 def consultaVagas(companycode):
@@ -21,9 +14,9 @@ def consultaVagas(companycode):
     elif companycode == 2:
         companyName = 'soprano'
     elif companycode == 3:
-        companyName = 'promob'
-    elif companycode == 4:
         companyName = 'totvs'
+    elif companycode == 4:
+        companyName = 'randondigital'
     else:
         print ("companycode non ecziste!")
 
@@ -127,11 +120,11 @@ def consultaVagas(companycode):
     return finalList
 
 contador = 1
-while contador < 7:
+while contador < 3:
     your_list_as_json = json.dumps(consultaVagas(contador),indent=1, sort_keys=True, ensure_ascii=False) 
     print(your_list_as_json)
     contador = contador + 1
 
 y = json.loads(your_list_as_json)
 
-#print(y)
+#print(y)sudo 

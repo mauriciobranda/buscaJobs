@@ -5,7 +5,7 @@ from elasticsearch import Elasticsearch
 es = Elasticsearch()
 countEmp = 1
 
-while countEmp < 100:
+while countEmp < 3:
     mlista = mainList.consultaVagas(countEmp) # EMPRESA QUE VAI SER LISTADA 
     your_list_as_json = json.dumps(mlista,indent=1, sort_keys=True, ensure_ascii=False)
     y = json.loads(your_list_as_json)
@@ -21,3 +21,6 @@ while countEmp < 100:
         count=count+1
 
     countEmp=countEmp+1
+
+
+    

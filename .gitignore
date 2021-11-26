@@ -2,3 +2,4 @@ releases.txt
 requirements.txt
 oneTimeMainList.py
 __pycache__
+my-env/
