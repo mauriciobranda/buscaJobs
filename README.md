@@ -3,9 +3,11 @@
 Mais um projeto que eu mesmo criei com o objetivo de "raspar" vagas dos portais de clientes da Gupy.
 
 #Steps
-a) elastic.py - Servico deve estar no ar
-a.1) mainList.py - Raspagem no site da Gupy
-b) executar o app.py - front
+##a) elastic.py - Servico deve estar no ar
+
+##a.1) mainList.py - Raspagem no site da Gupy
+
+##b) executar o app.py - front
 
 #Como ?
 Atraves de webscrapping em python com a lib BeautifulSoup4, o script acessa cada um dos sites dos  clientes e extrai dados como: nome da vaga e local.
